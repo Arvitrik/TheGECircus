@@ -1,0 +1,584 @@
+/* Colors: 
+            #FF5DA2, #99DDCC, #9C19E0, #000D6B,#3C3CDB, black, rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.9);
+*/
+
+/*
+*****************************************************
+             Global Settings
+******************************************************/
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Pacifico", cursive, "Quicksand", sans-serif;
+}
+
+/*
+*****************************************************
+             Header Section 
+******************************************************/
+
+header {
+  min-height: 100vh;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)),
+    url("./img/banner.jpg") fixed no-repeat center/cover;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+
+img {
+  /* Preserve aspect ratio on resizing for all images*/
+  object-fit: cover;
+}
+
+nav ul {
+  list-style-type: none;
+  display: none;
+}
+
+nav ul a {
+  display: block;
+  background-color: #000d6b;
+  padding: 20px;
+  font-size: 18px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #ff5da2;
+  transition: all 2s ease;
+}
+
+nav ul a:hover {
+  background-color: #3c3cdb;
+  color: #9c19e0;
+  padding-left: 30px;
+}
+
+.main-nav-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 21px;
+  background: #000d6b;
+  border-bottom: 3px solid #9c19e0;
+  flex: 0 0 auto;
+}
+
+.main-nav-container img {
+  width: 100px;
+  align-self: center;
+  background-color: #000d6b;
+}
+
+.toggle-menu {
+  padding: 3px;
+  display: inline-block;
+  align-self: center;
+  border: 3px solid #9c19e0;
+}
+
+.bar {
+  width: 30px;
+  height: 5px;
+  background-color: #9c19e0;
+  margin: 7px;
+  transition: transform 2s ease, opacity 1.8s ease;
+}
+
+.bar-1.cross {
+  transform: translateY(12px) rotate(52deg);
+}
+
+.bar-2.cross {
+  opacity: 0;
+}
+
+.bar-3.cross {
+  transform: translateY(-12px) rotate(-60deg);
+}
+
+.banner {
+  flex: 1 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  text-align: center;
+  background-color: linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.9)
+  );
+  color: #9c19e0;
+}
+
+.banner h2 {
+  text-transform: capitalize;
+  font-size: 54px;
+  font-kerning: 1px;
+  text-decoration: underline;
+}
+
+.banner p {
+  text-transform: uppercase;
+  font-style: italic;
+  font-size: 27px;
+  letter-spacing: 1.5px;
+}
+
+.banner p a {
+  text-transform: capitalize;
+  font-size: 23px;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 1.25px;
+  border: 3px solid;
+  text-decoration: none;
+  padding: 2px 7px;
+  align-self: center;
+  margin: 3px 9px;
+  color: #9c19e0;
+}
+
+.banner h2:hover,
+p:hover,
+p a:hover {
+  color: #ff5da2;
+  font-weight: bolder;
+}
+p a:hover {
+  font-style: italic;
+  font-size: 25px;
+}
+
+@media screen and (min-width: 768px) {
+  .main-nav-container {
+    display: none;
+  }
+
+  nav ul {
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    /* background-color: transparent; */
+  }
+
+  nav ul a {
+    background-color: transparent;
+    font-size: 25px;
+  }
+
+  nav ul a:hover {
+    background-color: transparent;
+    padding: 20px;
+    text-decoration: underline;
+    /* font-size: 27px; */
+    font-style: italic;
+  }
+}
+
+/*
+*****************************************************
+             Things to do Section 
+******************************************************/
+.things {
+  padding: 0 0 50px 0;
+  background-color: #000d6b;
+}
+
+.headings h2 {
+  font-size: 36px;
+  text-align: center;
+  letter-spacing: 0.54rem;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  color: #9c19e0;
+  transition: all 2s ease;
+}
+
+.headings-underline {
+  width: 25%;
+  height: 5px;
+  margin: 0 auto 7px auto;
+  background-color: #9c19e0;
+  transition: all 2s ease;
+}
+
+.headings {
+  padding: 33px;
+}
+
+.headings:hover h2 {
+  color: #ff5da2;
+  font-style: italic;
+}
+
+.headings:hover .headings-underline {
+  width: 30%;
+  background-color: #ff5da2;
+}
+
+.things-content {
+  /* Image becomes not blurry but partially transparent --- background is displayed better */
+  background-color: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9));
+  overflow: hidden;
+}
+
+.things img {
+  width: 100%;
+  display: block;
+  transition: transform 2s ease, opacity 2s ease;
+}
+
+.things img:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+  opacity: 0.8;
+}
+
+@media screen and (min-width: 576px) {
+  .things-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .things-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/*
+*****************************************************
+             Featuring Section 
+******************************************************/
+.featuring {
+  padding: 36px auto 0 auto;
+}
+
+.featuring-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.featuring-content {
+  position: relative;
+}
+
+.img-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 0;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.3);
+  /* transition: all 2s ease-in-out; */
+}
+
+.featuring-content:hover .img-overlay {
+  height: auto;
+  min-height: 50%;
+  max-height: 100%;
+}
+
+.featuring-content:hover img {
+  opacity: 0.6;
+}
+
+.img-overlay h3 {
+  text-align: center;
+  font-size: 27px;
+  letter-spacing: 1.8px;
+}
+
+.img-overlay p {
+  text-align: justify;
+  padding: 1px 3px;
+  color: black;
+}
+
+.featuring-content img {
+  max-height: 350px;
+  display: block;
+  width: 100%;
+  opacity: 1;
+  /* transition: all 2s ease-in-out; */
+}
+
+@media screen and (min-width: 576px) {
+  .featuring-content {
+    flex: 1 0 calc(50%);
+  }
+}
+
+@media screen and (min-width: 972px) {
+  .featuring-content {
+    flex: 1 0 calc(33.33%);
+  }
+}
+
+/*
+*****************************************************
+             Events Section 
+******************************************************/
+.events {
+  background-color: #000d6b;
+  max-height: 100vh;
+}
+
+.events .headings {
+  margin: 0 auto;
+  padding: 1px;
+}
+
+.events-carousel {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.mySlide {
+  display: none;
+  width: 100%;
+  overflow: hidden;
+}
+
+.mySlide img {
+  width: 100%;
+  height: 100%;
+}
+
+.prev-event,
+.next-event {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.6s ease;
+}
+
+.prev-event {
+  left: 5%;
+}
+
+.next-event {
+  right: 5%;
+}
+
+.dots {
+  background-color: rgba(0, 0, 0, 0.5);
+  margin: 0 auto;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  bottom: 3%;
+  left: 50%;
+  border-radius: 0.3rem;
+}
+
+.dot {
+  height: 0.5rem;
+  width: 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0 0.25rem;
+  background-color: rgba(255, 255, 255, 0.6);
+  transition: background-color 1s ease;
+}
+
+.active,
+.dot:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.fa-event {
+  font-size: 45px;
+  padding: 3px 2px;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.fa-event:hover {
+  opacity: 0.75;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+/* Text on top --- because user is intended to read text */
+.textImg {
+  font-size: 1.3rem;
+  background: rgba(255, 255, 255, 0.4);
+  font-weight: 700;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  position: absolute;
+  top: 0;
+}
+
+/*
+*****************************************************
+             About Us Section 
+******************************************************/
+.about {
+  min-height: 100vh;
+  padding: 60px 0;
+  background: url(./img/about-bg.jpg) center/cover fixed no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-card {
+  background-color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  border-radius: 12px;
+  padding: 45px;
+}
+
+.about-card h3 {
+  font-size: 1.8rem;
+  line-height: 1.81rem;
+  text-transform: capitalize;
+}
+
+.about-card .fas {
+  font-size: 3.6rem;
+  color: #9c19e0;
+  margin: 25px;
+}
+
+.about-card .fas:hover,
+.about-card h3:hover {
+  color: #ff5da2;
+}
+
+.about-card {
+  font-family: "Quicksand", sans-serif;
+  letter-spacing: 1px;
+  line-height: 2.1;
+}
+
+@media screen and (min-width: 768px) {
+  .about {
+    position: relative;
+  }
+  .about-card {
+    max-width: 50%;
+    border-radius: 36px;
+    position: absolute;
+    right: 10%;
+    top: 1%;
+    bottom: 1%;
+    overflow: hidden;
+  }
+}
+
+/*
+*****************************************************
+             Booking Section 
+******************************************************/
+.book {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(./img/booking.jpg) center/cover fixed no-repeat;
+}
+
+.booking-card {
+  flex: 0 0 75%;
+  padding: 30px 10px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 33px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 75%;
+}
+
+.booking-form h3 {
+  text-transform: capitalize;
+  text-align: center;
+  text-decoration: underline;
+  font-size: 36px;
+}
+
+.booking-form input {
+  padding: 7px;
+  border: 3px solid #9c19e0;
+  border-radius: 18px;
+}
+
+.booking-form label {
+  padding: 7px;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+.booking-form button {
+  margin: 20px;
+  font-size: 23px;
+  border: 3px solid #9c19e0;
+  border-radius: 18px;
+  font-weight: 800;
+  padding: 5px 7px;
+  color: #9c19e0;
+  background-color: #3c3cdb;
+  transition: all 0.6s ease-in-out;
+}
+
+.booking-form button:hover {
+  color: #ff5da2;
+  font-style: italic;
+}
+
+@media screen and (min-width: 992px) {
+  .booking-card {
+    flex: 0 0 50%;
+  }
+}
+/*
+*****************************************************
+             Footer Section 
+******************************************************/
+footer {
+  background-color: #000d6b;
+  color: #9c19e0;
+  padding: 10px 3px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-around;
+}
+
+footer p {
+  font-size: 18px;
+  font-style: italic;
+}
+
+.footer-icons a {
+  display: inline-block;
+  font-size: 24px;
+  margin: 10px;
+  padding: 5px 7px;
+  color: #9c19e0;
+}
+
+.footer-icons a:hover {
+  color: #ff5da2;
+  font-style: oblique;
+}
