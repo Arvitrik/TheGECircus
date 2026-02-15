@@ -1,5 +1,5 @@
 // Toggle menu bar for smaller screen --- uses jQuery
-// to do: replace with JS
+// TODO: replace with JS
 $(document).ready(function () {
   $(".toggle-menu").click(() => {
     $("nav ul").slideToggle(3000);
@@ -8,6 +8,7 @@ $(document).ready(function () {
 });
 
 // *************** Slides Show ***************
+// TODO: replace global variables/inline event triggers
 let slideIndex = 1;
 showSlides(slideIndex);
 
